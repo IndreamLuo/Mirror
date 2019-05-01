@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Mirror.Data\Mirror.Data.csproj" />
+    <ProjectReference Include="..\Mirror.Utility\Mirror.Utility.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

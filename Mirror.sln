@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mirror.Application", "Mirro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mirror.Web", "Mirror.Web\Mirror.Web.csproj", "{48C28365-DF8A-41FC-BD31-801200003925}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mirror.Utility", "Mirror.Utility\Mirror.Utility.csproj", "{39D9F22D-634E-4B3C-AC4F-65D40E1C620F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,5 +60,17 @@ Global
 		{48C28365-DF8A-41FC-BD31-801200003925}.Release|x64.Build.0 = Release|Any CPU
 		{48C28365-DF8A-41FC-BD31-801200003925}.Release|x86.ActiveCfg = Release|Any CPU
 		{48C28365-DF8A-41FC-BD31-801200003925}.Release|x86.Build.0 = Release|Any CPU
+		{39D9F22D-634E-4B3C-AC4F-65D40E1C620F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39D9F22D-634E-4B3C-AC4F-65D40E1C620F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39D9F22D-634E-4B3C-AC4F-65D40E1C620F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{39D9F22D-634E-4B3C-AC4F-65D40E1C620F}.Debug|x64.Build.0 = Debug|Any CPU
+		{39D9F22D-634E-4B3C-AC4F-65D40E1C620F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{39D9F22D-634E-4B3C-AC4F-65D40E1C620F}.Debug|x86.Build.0 = Debug|Any CPU
+		{39D9F22D-634E-4B3C-AC4F-65D40E1C620F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39D9F22D-634E-4B3C-AC4F-65D40E1C620F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39D9F22D-634E-4B3C-AC4F-65D40E1C620F}.Release|x64.ActiveCfg = Release|Any CPU
+		{39D9F22D-634E-4B3C-AC4F-65D40E1C620F}.Release|x64.Build.0 = Release|Any CPU
+		{39D9F22D-634E-4B3C-AC4F-65D40E1C620F}.Release|x86.ActiveCfg = Release|Any CPU
+		{39D9F22D-634E-4B3C-AC4F-65D40E1C620F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
