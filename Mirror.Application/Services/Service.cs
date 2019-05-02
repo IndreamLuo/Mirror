@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using Mirror.Utility;
 
 namespace Mirror.Application.Services
@@ -7,11 +8,11 @@ namespace Mirror.Application.Services
     {
         public Service(Data.Entities.Service serviceEntity)
         {
-            Vendors = new ReadonlyDictionary<int, Vendor>(out VendorsSource);
+            Vendors = new ReadOnlyDictionary<int, Vendor>(VendorsSource = new Dictionary<int, Vendor>());
         }
 
         protected IDictionary<int, Vendor> VendorsSource;
-        public ReadonlyDictionary<int, Vendor> Vendors { get; private set; }
+        public ReadOnlyDictionary<int, Vendor> Vendors { get; private set; }
 
         public void AddVendor(Vendor vendor)
         {
