@@ -330,3 +330,5 @@ ASALocalRun/
 .mfractor/
 Mirror.Web/appsettings.Development.json
 .vscode/
+Mirror.Data/Migrations/
+blogging.db
