@@ -331,4 +331,4 @@ ASALocalRun/
 Mirror.Web/appsettings.Development.json
 .vscode/
 Mirror.Data/Migrations/
-blogging.db
+*.db
