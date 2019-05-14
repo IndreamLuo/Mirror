@@ -2,7 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Mirror.Data\Mirror.Data.csproj" />
-    <ProjectReference Include="..\Mirror.Utility\Mirror.Utility.csproj" />
+    <ProjectReference Include="..\Mirror.Common\Mirror.Common.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

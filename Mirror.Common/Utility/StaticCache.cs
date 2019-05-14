@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Mirror.Utility
+namespace Mirror.Common.Utility
 {
     public static class StaticCache
     {

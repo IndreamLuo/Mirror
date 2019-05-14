@@ -3,7 +3,7 @@ using Mirror.Data.Entities;
 
 namespace Mirror.Data
 {
-    public class SQLiteContext : MirrorContext
+    public class SQLiteMirrorContext : MirrorContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

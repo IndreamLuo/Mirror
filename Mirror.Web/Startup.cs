@@ -23,7 +23,7 @@ namespace Mirror.Web
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddSingleton<MirrorContext, SQLiteContext>();
+            services.AddSingleton<MirrorContext, SQLiteMirrorContext>();
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

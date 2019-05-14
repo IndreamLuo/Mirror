@@ -3,15 +3,11 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Mirror.Data.Entities
 {
-    public class Service
+    public class Service : Common.Model.Service, IEntity<int>
     {
         public int Id { get; set; }
 
         [Required]
-        public string Key { get; set; }
-
-        public string Description{ get; set; }
-        
-        public ICollection<Vendor> Vendors { get; set; }
+        public override string Key { get; set; }
     }
 }
