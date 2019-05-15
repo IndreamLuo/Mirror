@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc.Testing;
 using Mirror.Web;
 
 namespace Mirror.Web.IntegrationTest
