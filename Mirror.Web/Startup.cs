@@ -27,8 +27,8 @@ namespace Mirror.Web
             services.AddSingleton<MirrorDbContext, SQLiteMirrorDbContext>();
             services.AddSingleton<IInstallApplication, InstallApplication>();
 
-            // var installApplication = services.BuildServiceProvider().GetService<IInstallApplication>();
-            // installApplication.EnsureInstalled();
+            var installApplication = services.BuildServiceProvider().GetService<IInstallApplication>();
+            installApplication.EnsureInstalled();
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

@@ -7,7 +7,7 @@ namespace Mirror.Data
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=Mirror.db");
+            optionsBuilder.UseSqlite("Data Source=.\\Mirror.db");
         }
     }
 }
