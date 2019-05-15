@@ -1,3 +1,5 @@
+using System.Linq;
+using Mirror.Application.Service;
 using Mirror.Data;
 
 namespace Mirror.Application.Install
@@ -13,17 +15,25 @@ namespace Mirror.Application.Install
 
         public void EnsureInstalled()
         {
-
+            EnsureDbInitialized();
         }
 
-        public void InitializeDb(MirrorDbContext dbContext)
+        protected void EnsureDbInitialized()
         {
-            if (dbContext is SQLiteMirrorDbContext)
+            if (DbContext is SQLiteMirrorDbContext)
             {
-                if (dbContext.Database.EnsureCreated())
+                DbContext.Database.EnsureCreated();
+            }
+
+            var availableServece = DbContext.Services.FirstOrDefault(service => service.Key == SystemServices._available);
+            if (availableServece == null)
+            {
+                foreach (var service in SystemServices.All.Values)
                 {
-                    
+                    DbContext.Services.Add(service);
                 }
+
+                DbContext.SaveChanges();
             }
         }
     }
