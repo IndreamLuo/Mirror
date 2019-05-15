@@ -1,5 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <ItemGroup>
+    <ProjectReference Include="..\Mirror.Common\Mirror.Common.csproj" />
+    <ProjectReference Include="..\Mirror.Data\Mirror.Data.csproj" />
+    <ProjectReference Include="..\Mirror.Application\Mirror.Application.csproj" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>

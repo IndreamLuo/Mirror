@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Mirror.Application.Cache;
+using Mirror.Data.Entities;
 
 namespace Mirror.Application.Service
 {
@@ -9,24 +10,24 @@ namespace Mirror.Application.Service
     {
         public ServicesContainer()
         {
-            ServicesStorage = new Dictionary<string, Common.Model.Service>();
-            VendersStorage = new Dictionary<string, IDictionary<string, Common.Model.Vendor>>();
+            ServicesStorage = new Dictionary<string, Data.Entities.Service>();
+            VendersStorage = new Dictionary<string, IDictionary<string, Vendor>>();
         }
 
-        protected readonly IDictionary<string, Common.Model.Service> ServicesStorage;
-        protected readonly IDictionary<string, IDictionary<string, Common.Model.Vendor>> VendersStorage;
+        protected readonly IDictionary<string, Data.Entities.Service> ServicesStorage;
+        protected readonly IDictionary<string, IDictionary<string, Vendor>> VendersStorage;
 
-        public IEnumerable<Common.Model.Service> Services => ServicesStorage.Values;
+        public IEnumerable<Data.Entities.Service> Services => ServicesStorage.Values;
 
-        public Common.Model.Service this[string key]
+        public Data.Entities.Service this[string key]
         {
             get => ServicesStorage[key];
             set
             {
-                IDictionary<string, Common.Model.Vendor> vendersDictionary;
+                IDictionary<string, Vendor> vendersDictionary;
                 if (!VendersStorage.TryGetValue(key, out vendersDictionary))
                 {
-                    vendersDictionary = new Dictionary<string, Common.Model.Vendor>();
+                    vendersDictionary = new Dictionary<string, Vendor>();
                     VendersStorage[key] = vendersDictionary;
                 }
 
@@ -39,7 +40,7 @@ namespace Mirror.Application.Service
             ServicesStorage.Remove(key);
         }
 
-        public Common.Model.Vendor this[string serviceKey, string venderKey]
+        public Vendor this[string serviceKey, string venderKey]
         {
             get => VendersStorage[serviceKey][venderKey];
             set
