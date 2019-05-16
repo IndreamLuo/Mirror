@@ -14,16 +14,24 @@ variables:
 
 steps:
 - task: DotNetCoreCLI@2
+  displayName: 'Build'
   inputs:
     command: 'build'
     feedsToUse: 'select'
     versioningScheme: 'off'
 - task: DotNetCoreCLI@2
+  displayName: 'Unit Test'
   inputs:
     command: 'test'
     projects: '**/Mirror.UnitTest/Mirror.UnitTest.csproj'
     feedsToUse: 'select'
     versioningScheme: 'off'
+- task: CopyFiles@2
+  displayName: 'Copy Source Code for Integration Test'
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)'
+    Contents: '**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)\\drop\\src'
 - task: DotNetCoreCLI@2
   displayName: 'Publish'
   inputs:
@@ -31,11 +39,6 @@ steps:
     publishWebProjects: True
     arguments: '--configuration $(BuildConfiguration) --output '
     zipAfterPublish: True
-- task: CopyFiles@2
-  inputs:
-    SourceFolder: '$(Build.SourcesDirectory)'
-    Contents: '**'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)\drop\src'
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
