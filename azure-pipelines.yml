@@ -29,7 +29,7 @@ steps:
 - task: ArchiveFiles@2
   displayName: 'Deploy Source Code for Integration Test'
   inputs:
-    rootFolderOrFile: '$(Build.BinariesDirectory)'
+    rootFolderOrFile: '$(Build.SourcesDirectory)'
     includeRootFolder: true
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/src.zip'
