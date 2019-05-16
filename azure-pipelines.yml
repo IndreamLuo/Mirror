@@ -26,12 +26,14 @@ steps:
     projects: '**/Mirror.UnitTest/Mirror.UnitTest.csproj'
     feedsToUse: 'select'
     versioningScheme: 'off'
-- task: CopyFiles@2
+- task: ArchiveFiles@2
   displayName: 'Deploy Source Code for Integration Test'
   inputs:
-    SourceFolder: '$(Build.SourcesDirectory)'
-    Contents: '**'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)/drop/src'
+    rootFolderOrFile: '$(Build.BinariesDirectory)'
+    includeRootFolder: true
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/src.zip'
+    replaceExistingArchive: true
 - task: DotNetCoreCLI@2
   displayName: 'Publish'
   inputs:
