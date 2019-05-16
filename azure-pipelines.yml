@@ -27,11 +27,11 @@ steps:
     feedsToUse: 'select'
     versioningScheme: 'off'
 - task: CopyFiles@2
-  displayName: 'Copy Source Code for Integration Test'
+  displayName: 'Deploy Source Code for Integration Test'
   inputs:
     SourceFolder: '$(Build.SourcesDirectory)'
     Contents: '**'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)\\drop\\src'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/drop/src'
 - task: DotNetCoreCLI@2
   displayName: 'Publish'
   inputs:
