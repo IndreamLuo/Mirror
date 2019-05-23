@@ -7,9 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Moq" Version="4.10.1" />
     <PackageReference Include="nunit" Version="3.11.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.11.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Mirror.Common\Mirror.Common.csproj" />
+    <ProjectReference Include="..\Mirror.Data\Mirror.Data.csproj" />
+    <ProjectReference Include="..\Mirror.Web.Application\Mirror.Web.Application.csproj" />
+    <ProjectReference Include="..\Mirror.Web\Mirror.Web.csproj" />
   </ItemGroup>
 
 </Project>

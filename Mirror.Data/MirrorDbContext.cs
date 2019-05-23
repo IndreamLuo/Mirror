@@ -5,8 +5,8 @@ namespace Mirror.Data
 {
     public class MirrorDbContext : DbContext
     {
-        public DbSet<Service> Services { get; set; }
-        public DbSet<Vendor> Vendor { get; set; }
+        public virtual DbSet<Service> Services { get; set; }
+        public virtual DbSet<Vendor> Vendor { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

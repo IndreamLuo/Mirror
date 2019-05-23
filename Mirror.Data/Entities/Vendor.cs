@@ -2,10 +2,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Mirror.Data.Entities
 {
-    public class Vendor
+    public class Vendor : Entity<int>
     {
-        [Key]
-        public int Id { get; set; }
         
         [Required]
         public string Url { get; set; }

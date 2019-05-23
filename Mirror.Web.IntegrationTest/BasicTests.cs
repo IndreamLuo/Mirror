@@ -10,5 +10,11 @@ namespace Mirror.Web.IntegrationTest
         {
             Assert.IsNull(null);
         }
+
+        [TestMethod]
+        public void SqliteDbExist()
+        {
+            Assert.IsTrue(System.IO.File.Exists("Mirror.db"));
+        }
     }
 }

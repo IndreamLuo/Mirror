@@ -21,7 +21,7 @@ namespace Mirror.Application.Service
                     {
                         new Vendor
                         {
-                            Url = "-/System/Available"
+                            Url = "/System/Available"
                         }
                     }
                 }

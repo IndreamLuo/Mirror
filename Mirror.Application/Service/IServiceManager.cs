@@ -1,13 +1,16 @@
+using System.Collections.Generic;
+using Mirror.Data.Entities;
+
 namespace Mirror.Application.Service
 {
     public interface IServiceManager
     {
-        ServicesContainer Container { get; }
+        Data.Entities.Service this[string key] { get; }
 
-        void Initialize();
+        IEnumerable<Data.Entities.Service> Services { get; }
 
-        void Persist(string key);
+        void AddService(Data.Entities.Service service);
 
-        void Persist(string serviceKey, string venderKey);
+        void AddVendor(string serviceKey, Vendor vendor);
     }
 }
