@@ -14,16 +14,26 @@ variables:
 
 steps:
 - task: DotNetCoreCLI@2
+  displayName: 'Build'
   inputs:
     command: 'build'
     feedsToUse: 'select'
     versioningScheme: 'off'
 - task: DotNetCoreCLI@2
+  displayName: 'Unit Test'
   inputs:
     command: 'test'
     projects: '**/Mirror.UnitTest/Mirror.UnitTest.csproj'
     feedsToUse: 'select'
     versioningScheme: 'off'
+- task: ArchiveFiles@2
+  displayName: 'Deploy Source Code for Integration Test'
+  inputs:
+    rootFolderOrFile: '$(Build.SourcesDirectory)'
+    includeRootFolder: true
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/src.zip'
+    replaceExistingArchive: true
 - task: DotNetCoreCLI@2
   displayName: 'Publish'
   inputs:
