@@ -1,9 +1,11 @@
+using System.IO;
+using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Mirror.Web.IntegrationTest
 {
     [TestClass]
-    public class BasicTests
+    public class BasicTests : WebApplicationTestsBase
     {
         [TestMethod]
         public void Pass()
@@ -12,9 +14,9 @@ namespace Mirror.Web.IntegrationTest
         }
 
         [TestMethod]
-        public void SqliteDbExist()
+        public async Task SqliteDbExist()
         {
-            Assert.IsTrue(System.IO.File.Exists("Mirror.db"));
+            Assert.IsTrue(File.Exists("Mirror.db"));
         }
     }
 }
