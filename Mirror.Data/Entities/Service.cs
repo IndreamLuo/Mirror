@@ -12,6 +12,6 @@ namespace Mirror.Data.Entities
 
         public string Description { get; set; }
         
-        public ICollection<Vendor> Vendors { get; set; }
+        public virtual ICollection<Vendor> Vendors { get; set; }
     }
 }

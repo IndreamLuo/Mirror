@@ -14,7 +14,7 @@ namespace Mirror.Web.IntegrationTest
         }
 
         [TestMethod]
-        public async Task SqliteDbExist()
+        public void SqliteDbExist()
         {
             Assert.IsTrue(File.Exists("Mirror.db"));
         }

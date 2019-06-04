@@ -5,6 +5,10 @@ namespace Mirror.Data
 {
     public class SQLiteMirrorDbContext : MirrorDbContext
     {
+        public SQLiteMirrorDbContext(DbContextOptions<SQLiteMirrorDbContext> dbContextOptions) : base(dbContextOptions)
+        {
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite("Data Source=.\\Mirror.db");

@@ -3,9 +3,11 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Mirror.Application.Install;
+using Mirror.Application.Service;
 using Mirror.Data;
 
 namespace Mirror.Web
@@ -22,10 +24,14 @@ namespace Mirror.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc()
+                .AddJsonOptions(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore)
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddSingleton<MirrorDbContext, SQLiteMirrorDbContext>();
+            services.AddDbContext<MirrorDbContext, SQLiteMirrorDbContext>(options => options.UseLazyLoadingProxies(), ServiceLifetime.Singleton);
+
             services.AddSingleton<IInstallApplication, InstallApplication>();
+            services.AddSingleton<IServiceManager, ServiceManager>();
 
             var installApplication = services.BuildServiceProvider().GetService<IInstallApplication>();
             installApplication.EnsureInstalled();

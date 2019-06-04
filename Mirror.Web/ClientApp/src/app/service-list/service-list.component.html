@@ -1,0 +1,26 @@
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Key</th>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody *ngFor='let service of services'>
+    <tr>
+      <td>{{service.id}}</td>
+      <td>{{service.key}}</td>
+      <td>{{service.name}}</td>
+      <td>{{service.description}}</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td colspan="3">
+        <div *ngFor='let vendor of service.vendors'>
+          <a href="{{vendor.url}}" target="_blank">{{vendor.url}}</a>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
