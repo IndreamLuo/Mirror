@@ -21,12 +21,15 @@ namespace Mirror.Application.Service
 
         public void AddService(Data.Entities.Service service)
         {
-            throw new System.NotImplementedException();
+            DbContext.Services.Add(service);
+            DbContext.SaveChanges();
         }
 
         public void AddVendor(string serviceKey, Vendor vendor)
         {
-            throw new System.NotImplementedException();
+            var service = this[serviceKey];
+            service.Vendors.Add(vendor);
+            DbContext.SaveChanges();
         }
     }
 }
