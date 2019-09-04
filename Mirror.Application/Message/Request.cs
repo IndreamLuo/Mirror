@@ -4,6 +4,8 @@ namespace Mirror.Application.Message
 {
     public abstract class Request : IMessage
     {
+        public Request() { }
+        
         public Request(Guid id, string key)
         {
             Id = id;
